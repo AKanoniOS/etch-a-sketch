@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.cell .low-res{
+    height: 50px;
+    width: 50px;
+    border: solid black;
+    background-color: red;
+}
+.cell {
+    height: 50px;
+    width: 50px;
+    border: solid black;
+    background-color: red;
+}
