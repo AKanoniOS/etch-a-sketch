@@ -9,9 +9,11 @@
 </head>
 <body>
     <div class="container">
-        <button class="low-res">low res</button>
-        <button class="med-res">medium res</button>
-        <button class="high-res">high res</button>
+        <button class="low-res" onclick="deleteCells(); createCells('low-res')">low res</button>
+        <button class="med-res" onclick="deleteCells(); createCells('med-res')">medium res</button>
+        <button class="high-res" onclick="deleteCells(); createCells('high-res')">high res</button>
+        <button class="reset" onclick="reset()">reset</button>
+        <button class="delete" onclick="deleteCells()">delete</button>
     </div>
     <script src="script.js"></script>
 </body>
