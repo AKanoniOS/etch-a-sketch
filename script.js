@@ -11,7 +11,7 @@ function createCells(res) {
             newDiv.classList.add("low-res");
             container.appendChild(newDiv);
             newDiv.addEventListener('mouseover', function (e) {
-                e.target.style.background = 'blue';
+                e.target.style.background = `${selectedColor}`;
               });
         }
     } else if (res == 'med-res') {
@@ -22,7 +22,7 @@ function createCells(res) {
             newDiv.classList.add("med-res");
             container.appendChild(newDiv);
             newDiv.addEventListener('mouseover', function (e) {
-                e.target.style.background = 'blue';
+                e.target.style.background = `${selectedColor}`;
               });
         }
     } else if (res == 'high-res') {
@@ -33,7 +33,7 @@ function createCells(res) {
             newDiv.classList.add("high-res");
             container.appendChild(newDiv);
             newDiv.addEventListener('mouseover', function (e) {
-                e.target.style.background = 'blue';
+                e.target.style.background = `${selectedColor}`;
               });
         }
     }
@@ -53,4 +53,10 @@ function deleteCells() {
     cells.forEach(item => {
         container.removeChild(item);
     })
+}
+
+// color picker function
+let selectedColor = 'blue'
+function changeColor(color){
+    selectedColor = `${color}`
 }
