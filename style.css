@@ -23,7 +23,8 @@
 
     width: 500px;
     height: 500px;
-    box-shadow: 1em 1em 1em gray;
+    box-shadow: 1em 1em 1em 1em gray;
+    
 }
 .gridActive {
     border: solid 0.2px black;
