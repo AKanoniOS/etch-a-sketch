@@ -1,93 +1,60 @@
-let container = document.createElement('div');
-container.classList.add('sketch-container');
-document.body.appendChild(container);
+const canvas = document.querySelector('.canvas')
+const defaultSize = 5
+let gridActive = true
 
-function createCells(res) {
-    if (res == 1) {
-        for (i=0;i<1;i++){
-            let newDiv = document.createElement('div');
-            newDiv.id = 'cell'+i;
-            newDiv.classList.add("cell");
-            newDiv.classList.add("low-res");
-            container.appendChild(newDiv);
-            newDiv.addEventListener('mouseover', function (e) {
-                e.target.style.background = `${selectedColor}`;
-              });
-        }
-    } else if (res % 4 == 0) {
-        for (i=0;i<res;i++){
-            let newDiv = document.createElement('div');
-            newDiv.id = 'cell'+i;
-            newDiv.classList.add("cell");
-            newDiv.classList.add("low-res");
-            container.appendChild(newDiv);
-            newDiv.addEventListener('mouseover', function (e) {
-                e.target.style.background = `${selectedColor}`;
-              });
+function drawCanvas(size) {
+    let gridElements = document.querySelectorAll(".gridElement")
+    gridElements.forEach(item => {
+        canvas.removeChild(item)
+    })
+
+    canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    canvas.style.gridTemplateRows = `repeat(${size}, 1fr)`
+
+    for (i=0;i<size*size;i++){
+        let newDiv = document.createElement('div')
+        newDiv.classList.add("gridElement")
+        newDiv.classList.toggle('gridActive')
+        newDiv.addEventListener('mouseover', () => {
+            newDiv.classList.add('active')
+        })
+        canvas.appendChild(newDiv)
+        if (gridActive) {
+            newDiv.classList.add('gridActive')
+        } else {
+            newDiv.classList.remove('gridActive')
         }
     }
 
-    if (res == 'low-res') {
-        for (i=0;i<378;i++){
-            let newDiv = document.createElement('div');
-            newDiv.id = 'cell'+i;
-            newDiv.classList.add("cell");
-            newDiv.classList.add("low-res");
-            container.appendChild(newDiv);
-            newDiv.addEventListener('mouseover', function (e) {
-                e.target.style.background = `${selectedColor}`;
-              });
-        }
-    } else if (res == 'med-res') {
-        for (i=0;i<1566;i++){
-            let newDiv = document.createElement('div');
-            newDiv.id = 'cell'+i;
-            newDiv.classList.add("cell");
-            newDiv.classList.add("med-res");
-            container.appendChild(newDiv);
-            newDiv.addEventListener('mouseover', function (e) {
-                e.target.style.background = `${selectedColor}`;
-              });
-        }
-    } else if (res == 'high-res') {
-        for (i=0;i<8643;i++){
-            let newDiv = document.createElement('div');
-            newDiv.id = 'cell'+i;
-            newDiv.classList.add("cell");
-            newDiv.classList.add("high-res");
-            container.appendChild(newDiv);
-            newDiv.addEventListener('mouseover', function (e) {
-                e.target.style.background = `${selectedColor}`;
-              });
-        }
-    }
+    
 }
 
-// add reset function
 function reset() {
-    let cells = document.querySelectorAll('.cell');
-    cells.forEach(item => {
-        item.style.background = 'red';
+    let gridElements = document.querySelectorAll(".gridElement")
+    gridElements.forEach(item => {
+        item.classList.remove('active')
+    })
+}
+function invert() {
+    let gridElements = document.querySelectorAll(".gridElement")
+    gridElements.forEach(item => {
+        item.classList.toggle('active')
     })
 }
 
-// add delete function
-function deleteCells() {
-    let cells = document.querySelectorAll('.cell');
-    cells.forEach(item => {
-        container.removeChild(item);
+function toggleGrid() {
+    let gridElements = document.querySelectorAll(".gridElement") 
+    gridActive = !gridActive
+    gridElements.forEach(item => {
+        item.classList.toggle('gridActive')
     })
 }
 
-// color picker function
-let selectedColor = 'blue'
-function changeColor(color){
-    selectedColor = `${color}`
-}
 
-// grid size selector
-const gridSizes = [1,2,4,8,16,32,64]
-const selectedSize = 1;
-function changeGridSize(size){
 
-}
+
+
+
+
+
+drawCanvas(defaultSize)

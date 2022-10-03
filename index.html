@@ -4,32 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>etch-a-sketch</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <button class="low-res" onclick="deleteCells(); createCells('low-res')">low res</button>
-        <button class="med-res" onclick="deleteCells(); createCells('med-res')">medium res</button>
-        <button class="high-res" onclick="deleteCells(); createCells('high-res')">high res</button>
-        <button class="reset" onclick="reset()">reset</button>
-        <button class="delete" onclick="deleteCells()">delete</button>
+    <div class="containerColumn">
         <div class="container">
-            <p>select your color --></p>
-            <button onclick="changeColor('blue')">blue</button>
-            <button onclick="changeColor('black')">black</button>
-            <button onclick="changeColor('orange')">orange</button>
+            <div class="containerColumn buttons">
+                <button onclick="reset()">reset</button>
+                <button onclick="invert()">invert</button>
+                <button onclick="toggleGrid()">toggle grid</button>
+                <button onclick="drawCanvas(1)">1x1</button>
+                <button onclick="drawCanvas(2)">2x2</button>
+                <button onclick="drawCanvas(4)">4x4</button>
+                <button onclick="drawCanvas(8)">8x8</button>
+                <p class="sliderValue"></p>
+                <input type="range" name="slider" min="1" max="64" steps="1" oninput="drawCanvas(this.value)">
+                <label for="slider">Grid Size</label>
+            </div>
+            <div class="canvas"></div>
         </div>
-        <select name="sizeSelector">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="8">8</option>
-            <option value="16">16</option>
-            <option value="32">32</option>
-            <option value="64">64</option>
-          </select>
     </div>
+    <div class="colorPallette"></div>
     <script src="script.js"></script>
 </body>
 </html>
