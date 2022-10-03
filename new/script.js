@@ -50,8 +50,11 @@ function toggleGrid() {
     })
 }
 
-function drawGrid() {
 
-}
+
+
+
+
+
 
 drawCanvas(defaultSize)
