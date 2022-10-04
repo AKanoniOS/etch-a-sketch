@@ -29,13 +29,11 @@
 .gridActive {
     border: solid 0.2px black;
 }
-button {
+button,
+.colorPicker {
     box-shadow: 0.5em 0.5em 0.5em gray;
     margin: 1em;
 }
 .buttons {
     margin-right: 1em;
-}
-.active {
-    background-color: black;
 }

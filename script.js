@@ -1,6 +1,7 @@
 const canvas = document.querySelector('.canvas')
 const defaultSize = 5
 let gridActive = true
+let selectedColor = '#000000';
 
 function drawCanvas(size) {
     let gridElements = document.querySelectorAll(".gridElement")
@@ -16,7 +17,7 @@ function drawCanvas(size) {
         newDiv.classList.add("gridElement")
         newDiv.classList.toggle('gridActive')
         newDiv.addEventListener('mouseover', () => {
-            newDiv.classList.add('active')
+            newDiv.style.backgroundColor = selectedColor
         })
         canvas.appendChild(newDiv)
         if (gridActive) {
@@ -50,7 +51,9 @@ function toggleGrid() {
     })
 }
 
-
+function selectColor(color) {
+    selectedColor = color
+}
 
 
 
