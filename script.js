@@ -2,6 +2,7 @@ const canvas = document.querySelector('.canvas')
 const defaultSize = 5
 let gridActive = true
 let selectedColor = '#000000';
+let selectedBGColor = '#FFFFFF';
 
 function drawCanvas(size) {
     let gridElements = document.querySelectorAll(".gridElement")
@@ -33,13 +34,13 @@ function drawCanvas(size) {
 function reset() {
     let gridElements = document.querySelectorAll(".gridElement")
     gridElements.forEach(item => {
-        item.classList.remove('active')
+        item.style.backgroundColor = selectedBGColor
     })
 }
 function invert() {
     let gridElements = document.querySelectorAll(".gridElement")
     gridElements.forEach(item => {
-        item.classList.toggle('active')
+        item.style.toggle('active')
     })
 }
 
