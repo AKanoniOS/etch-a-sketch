@@ -15,6 +15,7 @@ function drawCanvas(size) {
 
     for (i=0;i<size*size;i++){
         let newDiv = document.createElement('div')
+        newDiv.style.backgroundColor = selectedBGColor
         newDiv.classList.add("gridElement")
         newDiv.classList.toggle('gridActive')
         newDiv.addEventListener('mouseover', () => {
