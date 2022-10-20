@@ -96,3 +96,31 @@ button:hover {
 button:active {
     background-color: #f3eab5;
 }
+
+
+@media only screen and (max-width: 950px) {
+    .main-container{
+        flex-direction: column;
+    }
+    .canvas {
+        margin-top: 20px;
+        width: 300px;
+        height: 300px;
+    }
+    .buttons {
+        display: grid;
+        
+        grid-template-columns: auto auto;
+    }
+    label {
+        display: flex;
+        font-size: small;
+        width: 50px;
+    }
+    .sliderDiv {
+        grid-column-end: span 2;
+    }
+    .colorPal {
+        width: 300px;
+    }
+  }

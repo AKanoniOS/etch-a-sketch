@@ -11,17 +11,20 @@
     <div class="background">
         <div class="containerColumn">
             <h1>Etch-a-Sketch</h1>
-            <div class="container">
+            <div class="container main-container">
                 <div class="containerColumn buttons">
                     <button onclick="reset()">reset</button>
                     <button onclick="toggleGrid()">toggle grid</button>
                     <button onclick="toggleRainbow()">Toggle Rainbow</button>
-                    <input class="colorPicker" type="color" id="head" name="colorPicker" value="#000000" oninput="selectColor(this.value)">
-                    <label for="colorPicker">Color Picker</label>
-                    <p class="sliderValue"></p>
-                    <input type="range" name="slider" min="1" max="64" steps="1" oninput="drawCanvas(this.value)">
-                    <label for="slider">Grid Size</label>
-                    <div class="rainDisplay"></div>
+                    <div class="container">
+                        <input class="colorPicker" type="color" id="head" name="colorPicker" value="#000000" oninput="selectColor(this.value)">
+                        <label for="colorPicker">Color Picker</label>
+                    </div>
+                    <div class="container sliderDiv">
+                        <input type="range" name="slider" min="1" max="64" steps="1" oninput="drawCanvas(this.value)">
+                        <label for="slider">Grid Size</label>
+                    </div>
+                    
                 </div>
                 <div class="canvas"></div>
             </div>
