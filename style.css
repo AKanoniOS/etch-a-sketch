@@ -89,3 +89,10 @@ body {
     
     background-color: seashell;
 }
+
+button:hover {
+    background-color: #f3efd9;
+}
+button:active {
+    background-color: #f3eab5;
+}

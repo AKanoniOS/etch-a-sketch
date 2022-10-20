@@ -15,22 +15,18 @@
                 <div class="containerColumn buttons">
                     <button onclick="reset()">reset</button>
                     <button onclick="toggleGrid()">toggle grid</button>
+                    <button onclick="toggleRainbow()">Toggle Rainbow</button>
                     <input class="colorPicker" type="color" id="head" name="colorPicker" value="#000000" oninput="selectColor(this.value)">
                     <label for="colorPicker">Color Picker</label>
                     <p class="sliderValue"></p>
                     <input type="range" name="slider" min="1" max="64" steps="1" oninput="drawCanvas(this.value)">
                     <label for="slider">Grid Size</label>
+                    <div class="rainDisplay"></div>
                 </div>
                 <div class="canvas"></div>
             </div>
             <div style="white-space: pre-wrap;">
                 Features to add
-                - <strike>color picker</strike>
-                - random rainbow color button
-                - <strike>styled buttons</strike>
-                - <strike>custom font</strike>
-                - header
-                - add github info
                 - display slider value
                 - add background color changer
             </div>
@@ -42,7 +38,10 @@
                 <div class="five"></div>
             </div>
         </div>
-        <div class="colorPallette"></div>   
+        <div class="container">
+            <footer>Copyright © 2022 AKanoniOS</footer>
+            <div class="colorPallette"></div>   
+        </div>
         
     </div>
     <script src="script.js"></script>

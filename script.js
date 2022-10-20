@@ -3,6 +3,8 @@ const defaultSize = 5
 let gridActive = true
 let selectedColor = '#000000';
 let selectedBGColor = '#FFFFFF';
+let rainbow = false
+let randColor = ''
 
 function drawCanvas(size) {
     let gridElements = document.querySelectorAll(".gridElement")
@@ -18,9 +20,16 @@ function drawCanvas(size) {
         newDiv.style.backgroundColor = selectedBGColor
         newDiv.classList.add("gridElement")
         newDiv.classList.toggle('gridActive')
+
         newDiv.addEventListener('mouseover', () => {
-            newDiv.style.backgroundColor = selectedColor
+            chooseRandomColor()
+            if (rainbow) {
+                newDiv.style.backgroundColor = '#' + randColor
+            } else {
+                newDiv.style.backgroundColor = selectedColor
+            }
         })
+
         canvas.appendChild(newDiv)
         if (gridActive) {
             newDiv.classList.add('gridActive')
@@ -55,6 +64,14 @@ function toggleGrid() {
 
 function selectColor(color) {
     selectedColor = color
+}
+
+function toggleRainbow() {
+    rainbow = !rainbow
+}
+
+function chooseRandomColor() {
+    randColor = Math.floor(Math.random()*16777215).toString(16);
 }
 
 
